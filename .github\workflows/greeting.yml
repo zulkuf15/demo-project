@@ -1,4 +1,4 @@
-name: Greeting
+name: greeting
 on: push
 
 jobs:
