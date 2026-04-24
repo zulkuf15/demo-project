@@ -1,6 +1,14 @@
 name: Deploy Dist
 
-on: [push, workflow_dispatch]
+#on: [push, workflow_dispatch]
+on:
+  push:
+    branches:
+      - main
+      - 'feature/**'
+    paths-ignore:
+      -'.github/workflows/*'
+      - README.md
 
 jobs:
   test:
@@ -20,7 +28,7 @@ jobs:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/packages-lock.json') }}
       - name: Print Node version
-        run: node -v
+        run: node -v 
       - name: Install Dependencies
         run: npm ci
       - name: Run Tests
