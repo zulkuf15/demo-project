@@ -64,7 +64,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
             name: github-pages
-            path: files
+            path: dist
   Deploy:
     # Add a dependency to the build job
     needs: build
