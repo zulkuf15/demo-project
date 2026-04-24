@@ -1,5 +1,6 @@
-name: Deploy React to gitHub pages
+name: Deploy React to github pages
 
+#on: [push, workflow_dispatch]
 on:
   push:
     branches:
